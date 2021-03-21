@@ -8,6 +8,10 @@ const mongoSanitize = require('express-mongo-sanitize');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const blogRouter = require('./routes/posts');
+//const packageRouter = require("./routes/packages")
+const mongoRouter = require("./routes/packages_to_mongo");
+const bookingMongoRouter = require('./routes/booking_to_mongo');
+const joinPackages = require('./models/mongodb_join');
 
 var app = express();
 
@@ -40,6 +44,8 @@ app.use('/', indexRouter);
 app.use('/register', usersRouter);
 app.use('/blogs', blogRouter)
 app.post('/contact', require('./formregister').registerpost);
+app.use("/packages_to_mongo.js", mongoRouter);
+app.use("/booking", bookingMongoRouter)
 
  
 // catch 404 and forward to error handler
@@ -57,5 +63,30 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//------------------------------------------//
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://127.0.0.1:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("mydb");
+//   dbo.collection('booking').aggregate([
+//     { $lookup:
+//        {
+//          from: 'Packages',
+//          localField: 'PackagesId',
+//          foreignField: '_id',
+//          as: 'bookingdetails'
+//        }
+//      }
+//     ]).toArray(function(err, res) {
+//     if (err) throw err;
+//     console.log(JSON.stringify(res));
+//     db.close();
+//   });
+// });
+
+//--------------------------------------------///
 
 module.exports = app;
