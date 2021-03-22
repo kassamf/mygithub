@@ -1,0 +1,49 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head> 
+	<title> 
+		JavaScript 
+	| Pass string parameter in onClick function. 
+	</title> 
+</head> 
+
+<body style="text-align:center;"
+	id="body"> 
+	<h1 style="color:green;"> 
+			GeeksForGeeks 
+		</h1> 
+	<p id="GFG_UP"
+	style="font-size: 19px; 
+			font-weight: bold;"> 
+	</p> 
+	<button onclick="GFG_Fun('Parameter'); "> 
+		click here 
+	</button> 
+	<p id="GFG_DOWN"
+	style="color: green; 
+			font-size: 24px; 
+			font-weight: bold;"> 
+	</p> 
+
+  <form action="/packages/request" method="POST">
+    <button name="foo" value="upvote">Upvote</button>
+   </form>
+
+	<script> 
+		var up = 
+			document.getElementById('GFG_UP'); 
+		var down = 
+			document.getElementById('GFG_DOWN'); 
+		up.innerHTML = 
+		'Click on button to pass the '+ 
+		'string parameter to the function'; 
+
+		function GFG_Fun(parameter) { 
+			down.innerHTML = "String '" 
+			+ parameter + "' Received"; 
+		} 
+	</script> 
+</body> 
+
+</html> 
