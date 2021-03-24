@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    .row    
+      .col-sm-12.col-md-6.col-lg-6
+        table.table.table-borderless
+          thead
+            tr
+              th(scope='col') First
+              th(scope='col') Last
+              th(scope='col') Email
+          tbody
+            tr
+              th(scope='row') Customer
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              th(scope='row') Agent
+              td Jacob
+              td Thornton
+              td @fat
+            
+
+      .col-sm-12.col-md-6.col-lg-6
+        .card.m-2
+          img.card-img-top(style='width:200px' src='/images/' alt='Package anme')
+          .card-body
+            h5.card-title Package Name
+            p.card-text
+              |  Package Description
+            p.card-text
+              | Start date
+            p.card-text
+              | End Date
+            p.card-text
+              small.text-muted Price
+            a.btn.btn-primary(href='/packages/book/') Book

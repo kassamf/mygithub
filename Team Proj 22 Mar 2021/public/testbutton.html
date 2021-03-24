@@ -1,0 +1,63 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head> 
+	<title> 
+		JavaScript 
+	| Pass string parameter in onClick function. 
+	</title> 
+	<style>
+		.packagetitle {
+		text-align: center;
+		color: rgb(87, 27, 155);
+		}
+	</style>
+</head> 
+
+<body style="text-align:center;"
+	id="body"> 
+	<h1 ] style="color:green;"> 
+			GeeksForGeeks 
+		</h1> 
+	<h1 class=packagetitle id=mydate > 
+			Todays Date
+	</h1> 
+	<p id="GFG_UP"
+	style="font-size: 19px; 
+			font-weight: bold;"> 
+	</p> 
+	<button onclick="GFG_Fun('Parameter'); "> 
+		click here 
+	</button> 
+	<p id="GFG_DOWN"
+	style="color: green; 
+			font-size: 24px; 
+			font-weight: bold;"> 
+	</p> 
+
+  <form action="/packages/request" method="POST">
+    <button name="foo" value="upvote">Upvote</button>
+   </form>
+
+	<script> 
+		var up = 
+			document.getElementById('GFG_UP'); 
+		var down = 
+			document.getElementById('GFG_DOWN'); 
+		up.innerHTML = 
+		'Click on button to pass the '+ 
+		'string parameter to the function';
+		var startdate = new Date('2021-02-09T05:34:01.431+00:00');
+		var todaysdate = new Date();
+		document.getElementById('mydate').innerHTML=startdate;
+		if (data[0].PkgStartDate < new Date()){document.getElementById('package1').style ="color:red";}
+		
+
+		function GFG_Fun(parameter) { 
+			down.innerHTML = "String '" 
+			+ parameter + "' Received"; 
+		} 
+	</script> 
+</body> 
+
+</html> 
