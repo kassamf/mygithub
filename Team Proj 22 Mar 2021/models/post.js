@@ -55,3 +55,4 @@ const postSchema = new mongoose.Schema({
 postSchema.plugin(uniqueValidator);
 module.exports.Post = mongoose.model('Posts', postSchema);
 
+///Irshad, Farid, David, Ceti, Srini
