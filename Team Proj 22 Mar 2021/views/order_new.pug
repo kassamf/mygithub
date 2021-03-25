@@ -2,37 +2,55 @@ extends layout
 
 block content
     .row    
-      .col-sm-12.col-md-6.col-lg-6
+      .col-sm-12.col-md-6.col-lg-6(style='background: rgb(255, 255, 255, 0.6); padding:15px')
         table.table.table-borderless
           thead
             tr
+              th(scope='col') Details
               th(scope='col') First
               th(scope='col') Last
               th(scope='col') Email
           tbody
+          if currentUser   
             tr
               th(scope='row') Customer
-              td Mark
-              td Otto
-              td @mdo
+              td=currentUser.CustFirstName
+              td=currentUser.CustLastName
+              td=currentUser.userid
             tr
+            tbody
+            if agent
               th(scope='row') Agent
-              td Jacob
-              td Thornton
-              td @fat
-            
+              td=agent.AgtFirstName
+              td=agent.AgtLastName
+              td=agent.AgtEmail 
+
+        .form-check.form-check-inline Number of travellers 
+          input#inlineRadio1.form-check-input(type='radio' name='inlineRadioOptions' value='option1')
+          label.form-check-label(for='inlineRadio1') 1
+          .form-check.form-check-inline
+          input#inlineRadio2.form-check-input(type='radio' name='inlineRadioOptions' value='option2')
+          label.form-check-label(for='inlineRadio2') 2
+          .form-check.form-check-inline
+          input#inlineRadio3.form-check-input(type='radio' name='inlineRadioOptions' value='option3')
+          label.form-check-label(for='inlineRadio3') 3        
+                
 
       .col-sm-12.col-md-6.col-lg-6
         .card.m-2
-          img.card-img-top(style='width:200px' src='/images/' alt='Package anme')
+          img.card-img-top(src=`../../${package.PkgImg}` alt='Package anme')
           .card-body
-            h5.card-title Package Name
+            h5.card-title=package.PkgName
             p.card-text
-              |  Package Description
+              | #{package.PkgDesc}
             p.card-text
-              | Start date
+              | #{package.PkgStartDate.toDateString()}
             p.card-text
-              | End Date
+              | #{package.PkgEndDate.toDateString()}
+            p.card-text 
+              | Cost $#{package.PkgBasePrice} 
             p.card-text
-              small.text-muted Price
+              small.text-muted Agent Commision $#{package.PkgAgencyCommission} 
             a.btn.btn-primary(href='/packages/book/') Book
+
+          

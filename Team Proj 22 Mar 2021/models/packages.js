@@ -31,28 +31,28 @@ module.exports.getPackages = (query,callback)=>{mongo.connect('mongodb+srv://irs
      });
 }
 
-const packageSchema = new Schema({
-  Package_id: Number,
-  PkgName: String,
-  PkgStartDate: Date,
-  PkgEndDate: Date,
-  PkgDesc: String,
-  PkgBasePrice: Number,
-  PkgAgencyCommission: Number,
-  PkgImg: String,
-});
+// const packageSchema = new Schema({
+//   Package_id: Number,
+//   PkgName: String,
+//   PkgStartDate: Date,
+//   PkgEndDate: Date,
+//   PkgDesc: String,
+//   PkgBasePrice: Number,
+//   PkgAgencyCommission: Number,
+//   PkgImg: String,
+// });
 
-module.exports = mongoose.model("Package", packageSchema);
-
-
+// module.exports = mongoose.model("Package", packageSchema);
 
 
-// (err, client) => {
-//     const db = client.db("myclouddb");     
-//     const mypackages = db.collection("packages");
-//     mypackages.find().toArray((err, dbpackages) => {
-//        return dbpackages;
-//       });
+
+
+// // (err, client) => {
+// //     const db = client.db("myclouddb");     
+// //     const mypackages = db.collection("packages");
+// //     mypackages.find().toArray((err, dbpackages) => {
+// //        return dbpackages;
+// //       });
 //   }
 
 
