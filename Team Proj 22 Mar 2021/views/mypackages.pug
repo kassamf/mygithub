@@ -83,6 +83,7 @@ main(role='main')
             h4=`Duration: ${Math.floor((package.PkgEndDate-package.PkgStartDate)/1000/60/60/24/7)} weeks`
             h4=`Start: ${package.PkgStartDate.toDateString()}`
             span.dateclass.d-none=package.PkgStartDate
+            h4=`End: ${package.PkgEndDate.toDateString()}`
             p=package.PkgDesc
           
      

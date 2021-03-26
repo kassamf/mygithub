@@ -102,11 +102,12 @@ router.use((req, res, next) => {
     });
   });
 
+  //recieves data from the order_new pug page form and stores to Mongo Atlas booking collection
   router.post("/:pkgId", function (req, res, next) {
     //console.log("We are now in the packages end-point");
-      console.log(req.user.CustomerId)
+      //console.log(req.user.CustomerId)
       const booking = new Booking({ CustomerId: parseInt(req.user.CustomerId), BookingId:Math.floor(Math.random()*100)+1, BookingDate: new Date(), TravelerCount: req.body.inlineRadioOptions, PackageId: parseInt(req.body.PackageId) }); 
-      console.log(booking);
+      //console.log(booking);
       booking.save((err, result)=> {
         if(err) // If there are errors from the Model schema
         {   const errorArray = [];
@@ -118,7 +119,8 @@ router.use((req, res, next) => {
                 ...req.body,
             });     
         }
-          res.render('thankyou',{data:result.CustomerId})
+        console.log(result.BookingDate)  
+        res.render('thankyou',{data:result.BookingDate})
         });
       });
 
