@@ -25,15 +25,7 @@ block content
               td=agent.AgtLastName
               td=agent.AgtEmail 
 
-        #travellers.form-check.form-check-inline Number of travellers 
-          input#inlineRadio1.form-check-input(type='radio' name='inlineRadioOptions' value='1')
-          label.form-check-label(for='inlineRadio1') 1
-          .form-check.form-check-inline
-          input#inlineRadio2.form-check-input(type='radio' name='inlineRadioOptions' value='2')
-          label.form-check-label(for='inlineRadio2') 2
-          .form-check.form-check-inline
-          input#inlineRadio3.form-check-input(type='radio' name='inlineRadioOptions' value='3')
-          label.form-check-label(for='inlineRadio3') 3        
+              
                 
 
       .col-sm-12.col-md-6.col-lg-6
@@ -51,7 +43,22 @@ block content
               | Cost $#{package.PkgBasePrice} 
             p.card-text
               small.text-muted Agent Commision $#{package.PkgAgencyCommission} 
-            #book
+            form(action=`/book/${package.PackageId}` method='POST')
+              #travellers.form-check.form-check-inline Number of travellers 
+                input#inlineRadio1.form-check-input(type='radio' name='inlineRadioOptions' value='1' checked='checked' )
+                label.form-check-label(for='inlineRadio1') 1
+                .form-check.form-check-inline
+                input#inlineRadio2.form-check-input(type='radio' name='inlineRadioOptions' value='2')
+                label.form-check-label(for='inlineRadio2') 2
+                .form-check.form-check-inline
+                input#inlineRadio3.form-check-input(type='radio' name='inlineRadioOptions' value='3')
+                label.form-check-label(for='inlineRadio3') 3  
+              .form-row.d-none
+                .form-group.col-md-4
+                  label(for='packageid')
+                  input#packageid.form-control(type='integer' name='PackageId' placeholder=`${package.PackageId}` value=`${package.PackageId}`)
+              .col-auto.my-1
+                button.btn.btn-primary(type='submit') Confirm Booking
     script.
      if (document.querySelector('input[name=inlineRadioOptions]:checked').value!='null')
         document.getElementById('book').innerHTML=`<div class="a btn btn-primary" href="/book/1/${document.querySelector('input[name=inlineRadioOptions]:checked').value}">Book</div>`
