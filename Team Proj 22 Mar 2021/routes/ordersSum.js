@@ -16,9 +16,9 @@ const pageShowContacts = {
 
 
 
-const bookings = require('../models/bookings'); //new
+const bookings = require('../models/booking'); //new
 // const packages = require('../models/packages');
-const query = ({});
+//const query = ({});
 
 
 // //from packages - new

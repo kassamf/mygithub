@@ -11,7 +11,7 @@ const blogRouter = require('./routes/posts');
 const packageRouter = require('./routes/packages');
 const contactRouter = require("./routes/contacts")
 const orderRouter = require('./routes/book');
-const orderSumRouter = require('./routes/ordersSum');
+const orderSumRouter = require('./routes/ordersSum'); //new
 
 var app = express();
 
@@ -47,7 +47,7 @@ app.use('/packages', packageRouter)
 app.use("/contacts", contactRouter);
 app.use('/book', orderRouter);
 app.post('/contact', require('./formregister').registerpost);
-app.use('/ordersSum', orderSumRouter);
+app.use('/ordersSum', orderSumRouter); //new
  
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
