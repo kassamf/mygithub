@@ -102,4 +102,25 @@ router.use((req, res, next) => {
     });
   });
 
+  router.post("/:pkgId", function (req, res, next) {
+    //console.log("We are now in the packages end-point");
+      console.log(req.user.CustomerId)
+      const booking = new Booking({ CustomerId: parseInt(req.user.CustomerId), BookingId:Math.floor(Math.random()*100)+1, BookingDate: new Date(), TravelerCount: req.body.inlineRadioOptions, PackageId: parseInt(req.body.PackageId) }); 
+      console.log(booking);
+      booking.save((err, result)=> {
+        if(err) // If there are errors from the Model schema
+        {   const errorArray = [];
+            const errorKeys = Object.keys(err.errors);
+            errorKeys.forEach(key => errorArray.push(err.errors[key].message));
+            return res.render("sign-up", 
+            { ...pageRegister,
+                errors: errorArray,
+                ...req.body,
+            });     
+        }
+          res.render('thankyou',{data:result.CustomerId})
+        });
+      });
+
+
 module.exports = router;
