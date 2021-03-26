@@ -16,51 +16,36 @@ const pageShowContacts = {
 
 
 
-const bookings = require('../models/booking'); //new
-// const packages = require('../models/packages');
-//const query = ({});
 
-
-// //from packages - new
-// router.get('/', function(req, res, next) {
-// packages.getPackages(query, (err, resd)=>{
-//   if(err) return res.send(err);
-//   if (resd) {
-//     res.render('mypackages',{data:resd})
-//   }
-// });
-// });
-
-
-
-
+const { Booking } = require('../models/booking');
 
 
 // Get all contacts page for agencies part
-const query = ({});
-router.get('/', function(req, res, next) {
-   //Contact.find((err, agencies) => {
-    Contact.getContacts(query, (err, agencies)=>{
-      if(err) return res.send(err);
-      if (agencies) {
-        Contact.getAgents({AgencyId:1}, (err, agents1)=>{
-          if(err) return res.send(err);
-          if (agents1) {
-            Contact.getAgents({AgencyId:2}, (err, agents2)=>{
-              if(err) return res.send(err);
-              if (agents2) {
-                console.log(agents2)
-                res.render("orders_summary", { blogPosts:agencies, blogAgents1:agents1, blogAgents2: agents2});
-              }
-            })
-            
-          }
-        })
 
-        
-      }
-    })
-    });
+router.get('/', function(req, res, next) {
+  
+      const query = { CustomerId : req.user.CustomerId };
+  
+      Booking.find(query, (err, bookings) => {
+  
+        if (err) {
+  
+          console.log(err);
+  
+          next(err);
+        }
+
+  res.render("orders_summary", { allBookings:bookings });
+  console.log(bookings)
+              })});
+    
+
+
+    
+   
+       
+
+
 
 // // From Book.js
 //Irshaad commented out router so book button is not function
@@ -89,10 +74,7 @@ router.get('/', function(req, res, next) {
 
 
 
-//packages - new
-router.post('/request', function(req, res, next) {
-  res.send(req.body)
-});
+
 
 
 

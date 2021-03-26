@@ -44,8 +44,9 @@ app.use('/', indexRouter);
 app.use('/register', usersRouter);
 app.use('/blogs', blogRouter);
 app.use('/packages', packageRouter)
-app.use("/contacts", contactRouter);
+app.use("/conapp.use('/ordersSum', orderSumRouter); //newtacts", contactRouter);
 app.use('/book', orderRouter);
+app.use('/contacts', contactRouter);
 app.post('/contact', require('./formregister').registerpost);
 app.use('/ordersSum', orderSumRouter); //new
 

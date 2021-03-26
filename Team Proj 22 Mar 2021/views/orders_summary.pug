@@ -60,64 +60,33 @@ head
   
   .jumbotron.p-4.p-md-5.text-white.rounded
     .col-md-6.px-0
-      h4.display-4.font-italic Orders Summary
-      p.lead.my-3 Get your suitecases packed!
-      p.lead.mb-0
-        a.text-white.font-weight-bold(href='../blogs') 
+      h4.display-4.font-italic All Your Bookings! 
+
 
 .row.mb-2
-  .col-md-6(style= 'background-image: url("../images/havana_gettyimages-989434672.jpg")')
-   
-main.container.pt-3(style='background: rgba(253, 160, 101,0.7); padding:15px')
-  - var agencyIndex =[0,1];
+  .col-md(style= 'background-image: url("../images/havana_gettyimages-989434672.jpg")')
+
+h1=currentUser.CustFirstName + ' ' + currentUser.CustLastName
+main.container.pt-3(style='padding:15px;')
   .row
-   each val in agencyIndex 
-    .col-md-6 
-      .bd-example(style='margin-top: 25px;')
-       .card.mx-auto(style='width: 18rem;background: rgb(255, 255, 255, 0.6);')
-        .card-body
-          p.card-text
-            address
-            strong Travel Experts
-            br
-            |           #{agency.AgncyAddress}
-            br
-            |           #{agency.AgncyCity +" "+agency.AgncyProv}
-            br
-            |           #{agency.AgncyCountry}
-            br
-            abbr(title='Phone') P:
-            |  #{agency.AgncyPhone}
-   
-  br
-  .row
-    .col-md-6
-     each agent in contactAgents1
-       .card.mx-auto(style='width: 18rem;background: rgb(255, 255, 255, 0.6);')
-        .card-body
-          p.card-text
-            address
-            strong #{agent.AgtFirstName+" "+ agent.AgtLastName}
-            br
-            abbr(title='Phone') P:
-            |  #{agent.AgtBusPhone}
-            br
-            strong E-mail:
-            a(href='mailto:#{agent.AgtEmail}') #{agent.AgtEmail}
-       br      
-         
-    .col-md-6
-      each agent in contactAgents2
-        .card.mx-auto(style='width: 18rem;background: rgb(255, 255, 255, 0.75);')
+    each booking in allBookings 
+      .col-md-4 
+        .bd-example(style='margin-top: 25px;')
+        .card.mx-auto(style='width: 18rem;background: rgb(255, 255, 255, 0.6);')
           .card-body
             p.card-text
               address
-              strong #{agent.AgtFirstName+" "+ agent.AgtLastName}
+              strong Travel Experts
               br
-              abbr(title='Phone') P:
-              |  #{agent.AgtBusPhone}
+              |           BookingId: #{booking.BookingId}
               br
-              strong E-mail:
-              a(href='mailto:#{agent.AgtEmail}') #{agent.AgtEmail}
-        br
-  
+              |           Booking Date: #{new Date(booking.BookingDate).toDateString()}
+              br
+              |           Traveler Count: #{booking.TravelerCount}
+              br
+              |           PackageId: #{booking.PackageId}
+              br
+
+
+
+              
