@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
               if(err) return res.send(err);
               if (agents2) {
                 console.log(agents2)
-                res.render("viewContacts", { blogPosts:agencies, blogAgents1:agents1, blogAgents2: agents2});
+                res.render("viewContacts", { contactAgency:agencies, contactAgents1:agents1, contactAgents2: agents2});
               }
             })
             

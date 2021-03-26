@@ -62,64 +62,59 @@ head
     .col-md-6.px-0
       h4.display-4.font-italic Contact Us
       p.lead.my-3 We'll get you to your dream destination!
-      p.lead.mb-0
-        a.text-white.font-weight-bold(href='../blogs') 
 
 .row.mb-2
-  .col-md-6(style= 'background-image: url("../images/havana_gettyimages-989434672.jpg")')
+  .col-md(style= 'background-image: url("../images/havana_gettyimages-989434672.jpg")')
    
-main.container.pt-3(style='background: rgba(253, 160, 101,0.7); padding:15px')
-  - var agencyIndex =[0,1];
+main.container.pt-3(style='padding:15px;')
   .row
-   each val in agencyIndex 
+   each agency in contactAgency 
     .col-md-6 
       .bd-example(style='margin-top: 25px;')
-        address
-        strong Travel Experts
-        br
-        |           #{blogPosts[val].AgncyAddress}
-        br
-        |           #{blogPosts[val].AgncyCity +" "+blogPosts[0].AgncyProv}
-        br
-        |           #{blogPosts[val].AgncyCountry}
-        br
-        abbr(title='Phone') P:
-        |  #{blogPosts[val].AgncyPhone}
+       .card.mx-auto(style='width: 18rem;background: rgb(255, 255, 255, 0.6);')
+        .card-body
+          p.card-text
+            address
+            strong Travel Experts
+            br
+            |           #{agency.AgncyAddress}
+            br
+            |           #{agency.AgncyCity +" "+agency.AgncyProv}
+            br
+            |           #{agency.AgncyCountry}
+            br
+            abbr(title='Phone') P:
+            |  #{agency.AgncyPhone}
    
-  -var agentIndex = [0,1,2,3]
-
-  .row
-   each val in agentIndex 
-    .col-md-6
-      address
-      strong #{blogAgents1[val].AgtFirstName+" "+blogAgents1[0].AgtLastName}
-      br
-      abbr(title='Phone') P:
-      |  #{blogAgents1[val].AgtBusPhone}
-      br
-      strong E-mail:
-      a(href='mailto:#{blogAgents1[val].AgtEmail}') #{blogAgents1[val].AgtEmail}
-      br
-
-    .col-md-6
-      address
-      strong #{blogAgents2[val].AgtFirstName+" "+blogAgents2[0].AgtLastName}
-      br
-      abbr(title='Phone') P:
-      |  #{blogAgents2[val].AgtBusPhone}
-      br
-      strong E-mail:
-      a(href='mailto:#{blogAgents2[val].AgtEmail}') #{blogAgents2[val].AgtEmail}
-      br
+  br
   .row
     .col-md-6
-      address
-      strong #{blogAgents1[4].AgtFirstName+" "+blogAgents1[4].AgtLastName}
-      br
-      abbr(title='Phone') P:
-      |  #{blogAgents1[4].AgtBusPhone}
-      br
-      strong E-mail:
-      a(href='mailto:#{blogAgents1[4].AgtEmail}') #{blogAgents1[4].AgtEmail}
-      br
+     each agent in contactAgents1
+       .card.mx-auto(style='width: 18rem;background: rgb(255, 255, 255, 0.6);')
+        .card-body
+          p.card-text
+            address
+            strong #{agent.AgtFirstName+" "+ agent.AgtLastName}
+            br
+            abbr(title='Phone') P:
+            |  #{agent.AgtBusPhone}
+            br
+            strong E-mail:
+            a(href='mailto:#{agent.AgtEmail}') #{agent.AgtEmail}
+       br      
+         
+    .col-md-6
+      each agent in contactAgents2
+        .card.mx-auto(style='width: 18rem;background: rgb(255, 255, 255, 0.75);')
+          .card-body
+            p.card-text
+              address
+              strong #{agent.AgtFirstName+" "+ agent.AgtLastName}
+              br
+              abbr(title='Phone') P:
+              |  #{agent.AgtBusPhone}
+              br
+              strong E-mail:
+              a(href='mailto:#{agent.AgtEmail}') #{agent.AgtEmail}
+        br
   

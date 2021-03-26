@@ -25,14 +25,14 @@ block content
               td=agent.AgtLastName
               td=agent.AgtEmail 
 
-        .form-check.form-check-inline Number of travellers 
-          input#inlineRadio1.form-check-input(type='radio' name='inlineRadioOptions' value='option1')
+        #travellers.form-check.form-check-inline Number of travellers 
+          input#inlineRadio1.form-check-input(type='radio' name='inlineRadioOptions' value='1')
           label.form-check-label(for='inlineRadio1') 1
           .form-check.form-check-inline
-          input#inlineRadio2.form-check-input(type='radio' name='inlineRadioOptions' value='option2')
+          input#inlineRadio2.form-check-input(type='radio' name='inlineRadioOptions' value='2')
           label.form-check-label(for='inlineRadio2') 2
           .form-check.form-check-inline
-          input#inlineRadio3.form-check-input(type='radio' name='inlineRadioOptions' value='option3')
+          input#inlineRadio3.form-check-input(type='radio' name='inlineRadioOptions' value='3')
           label.form-check-label(for='inlineRadio3') 3        
                 
 
@@ -51,6 +51,7 @@ block content
               | Cost $#{package.PkgBasePrice} 
             p.card-text
               small.text-muted Agent Commision $#{package.PkgAgencyCommission} 
-            a.btn.btn-primary(href='/packages/book/') Book
-
-          
+            #book
+    script.
+     if (document.querySelector('input[name=inlineRadioOptions]:checked').value!='null')
+        document.getElementById('book').innerHTML=`<div class="a btn btn-primary" href="/book/1/${document.querySelector('input[name=inlineRadioOptions]:checked').value}">Book</div>`
