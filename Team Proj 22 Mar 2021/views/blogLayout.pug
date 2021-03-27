@@ -45,13 +45,13 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
         li.nav-item
           a.nav-link(href='/contacts') Contact Us
           
-.jumbotron.jumbotron-fluid
+.jumbotron.jumbotron-fluid.text-center
       .container
         if pageheading
           h1.display-4= pageheading
         else 
           h1.display-4 Welcome to our Website
-        p.lead
+        p.lead(style='font-size:35px')
           | #{pagemessage}
 .container
       if errors    
