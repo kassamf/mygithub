@@ -48,64 +48,63 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
       .card-body
         h2.card-title We'd love to have you as a client!
         form(method='POST' action='/register')
-        .form-row
-          .form-group.col-md-6
-            label(for='inputEmail4') Username(E-mail)
-            input#inputEmail4.form-control(type='email' name='userid' placeholder='someone@something.com' aria-describedby='emailHelp' required='')
-            small#emailHelp.form-text(style='display:none') Please enter your e-mail.
-          .form-group.col-md-6
-            label(for='inputPassword4') Password
-            input#inputPassword4.form-control(type='password' name='passwd' placeholder='xxxxxxxx' aria-describedby='passwordHelp' required='')
-            small#passwordHelp.form-text(style='display:none')
-              | Your password should be 8 characters and must include at least one number, one uppercase letter and one special character.
-        .form-row
-          .form-group.col-md-6
-            label(for='firstName') First name
-            input#firstName.form-control(type='text' name='CustFirstName' placeholder='John' aria-describedby='firstNameHelp' required='')
-            small#firstNameHelp.form-text(style='display:none') Please enter your first name.
-          .form-group.col-md-6
-            label(for='lastName') Last name
-            input#lastName.form-control(type='text' name='CustLastName' placeholder='Smith' aria-describedby='lastNameHelp' required='')
-            small#lastNameHelp.form-text(style='display:none') Please enter your last name.
-        .form-group
-          label(for='inputAddress') Address
-          input#inputAddress.form-control(type='text' name='CustAddress' placeholder='1234 Main St' aria-describedby='inputAddressHelp')
-          small#inputAddressHelp.form-text(style='display:none') Please enter your address.
-        .form-group
-          label(for='inputAddress2') Country
-          input#inputAddress2.form-control(type='text' name='CustCountry' placeholder='Country' aria-describedby='inputAddressHelp2')
-          small#inputAddressHelp2.form-text(style='display:none') Please enter your apartment, studio, or floor.
-        .form-row
-          .form-group.col-md-6
-            label(for='inputCity') City
-            input#inputCity.form-control(type='text' name='CustCity' placeholder='Calgary' aria-describedby='cityHelp')
-            small#cityHelp.form-text(style='display:none') Please enter your city.
-          .form-group.col-md-4
-            label(for='inputState') Province
-            select#inputState.form-control(name='CustProv')
-              option(selected='') Choose...
-              option AB
-              option BC
-              option ON
-              option MB
-              option NS
-              option SK
-          // Postal code must comply with regular expression
-          .form-group.col-md-2
-            label(for='inputZip') Postal Code
-            input#inputZip.form-control(type='text' name='CustPostal' pattern='^[A-Za-z]\\d[A-Za-z]-\\d[A-Za-z]\\d$' placeholder='A1A-1A1' aria-describedby='zipHelp')
-            small#zipHelp.form-text(style='display:none') Please enter your postal code.
-        // Telephone number must comply with regular expression
-        .form-row
-          .form-group.col-md-6
-            label(for='phone') Phone number:
-            input#phone.form-control(type='tel' name='CustHomePhone' pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' placeholder='403-455-4444' aria-describedby='telHelp')
-            small#telHelp.form-text(style='display:none') Please enter your phone number.
-        // Submit and Reset button prompts user for confirmation before proceeding
-        button.btn.btn-light(type='submit' onclick='return confirmation()') Submit
-        button.btn.btn-light(type='reset' onclick='return confirmation()' style='margin:5px') Reset
+          .form-row
+            .form-group.col-md-6
+              label(for='inputEmail4') Username(E-mail)
+              input#inputEmail4.form-control(type='email' name='userid' placeholder='someone@something.com' aria-describedby='emailHelp' required='')
+              small#emailHelp.form-text(style='display:none') Please enter your e-mail.
+            .form-group.col-md-6
+              label(for='inputPassword4') Password
+              input#inputPassword4.form-control(type='password' name='passwd' placeholder='xxxxxxxx' aria-describedby='passwordHelp' required='')
+              small#passwordHelp.form-text(style='display:none')
+                | Your password should be 8 characters and must include at least one number, one uppercase letter and one special character.
+          .form-row
+            .form-group.col-md-6
+              label(for='firstName') First name
+              input#firstName.form-control(type='text' name='CustFirstName' placeholder='John' aria-describedby='firstNameHelp' required='')
+              small#firstNameHelp.form-text(style='display:none') Please enter your first name.
+            .form-group.col-md-6
+              label(for='lastName') Last name
+              input#lastName.form-control(type='text' name='CustLastName' placeholder='Smith' aria-describedby='lastNameHelp' required='')
+              small#lastNameHelp.form-text(style='display:none') Please enter your last name.
+          .form-group
+            label(for='inputAddress') Address
+            input#inputAddress.form-control(type='text' name='CustAddress' placeholder='1234 Main St' aria-describedby='inputAddressHelp')
+            small#inputAddressHelp.form-text(style='display:none') Please enter your address.
+          .form-group
+            label(for='inputAddress2') Country
+            input#inputAddress2.form-control(type='text' name='CustCountry' placeholder='Country' aria-describedby='inputAddressHelp2')
+            small#inputAddressHelp2.form-text(style='display:none') Please enter your apartment, studio, or floor.
+          .form-row
+            .form-group.col-md-6
+              label(for='inputCity') City
+              input#inputCity.form-control(type='text' name='CustCity' placeholder='Calgary' aria-describedby='cityHelp')
+              small#cityHelp.form-text(style='display:none') Please enter your city.
+            .form-group.col-md-4
+              label(for='inputState') Province
+              select#inputState.form-control(name='CustProv')
+                option(selected='') Choose...
+                option AB
+                option BC
+                option ON
+                option MB
+                option NS
+                option SK
+            // Postal code must comply with regular expression
+            .form-group.col-md-2
+              label(for='inputZip') Postal Code
+              input#inputZip.form-control(type='text' name='CustPostal' pattern='^[A-Za-z]\\d[A-Za-z]-\\d[A-Za-z]\\d$' placeholder='A1A-1A1' aria-describedby='zipHelp')
+              small#zipHelp.form-text(style='display:none') Please enter your postal code.
+          // Telephone number must comply with regular expression
+          .form-row
+            .form-group.col-md-6
+              label(for='phone') Phone number:
+              input#phone.form-control(type='tel' name='CustHomePhone' pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' placeholder='403-455-4444' aria-describedby='telHelp')
+              small#telHelp.form-text(style='display:none') Please enter your phone number.
+          // Submit and Reset button prompts user for confirmation before proceeding
+          button.btn.btn-light(type='submit' onclick='return confirmation()') Submit
+          button.btn.btn-light(type='reset' onclick='return confirmation()' style='margin:5px') Reset
   .col-md-3
-
 
 // script base on course example to display text for an onfocus event
 script(src='javascripts/register.js')
