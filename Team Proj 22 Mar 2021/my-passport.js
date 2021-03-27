@@ -1,4 +1,5 @@
-// Authors:
+// Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
+//Courtesy of Mostafa Mohamed
 
 const passport = require("passport");
 const bcrypt = require("bcryptjs");

@@ -1,4 +1,4 @@
-//- Authors:
+//- Authors: Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam, David McDonald
 
 doctype html
 head
@@ -62,6 +62,10 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
             span.sr-only (current)
         li.nav-item
           a.nav-link(href='/contacts') Contact Us
+    if currentUser   
+      .mt-1.mr-4.float-right
+        a.float-right(href="/log-out") Logout
+        p.float-right.mx-4.text-dark Welcome #{currentUser.userid}
 main(role='main')
   // Main jumbotron for a primary marketing message or call to action
   .jumbotron

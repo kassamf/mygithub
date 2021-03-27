@@ -1,4 +1,4 @@
-// Authors:
+// Authors: Farid Kassam, Srinivasan Sivalingam
 
 // getting-started.js
 const mongoose = require('mongoose');

@@ -1,4 +1,4 @@
-//- Authors:
+//- Authors: Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla
 
 doctype html
 head
@@ -23,13 +23,14 @@ head
 body
 
 nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f2fd;')
-    a.navbar-brand(href='/') Travel Experts
-    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarsExampleDefault.collapse.navbar-collapse
+  a.navbar-brand(href='/') Travel Experts
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarsExampleDefault.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
       ul.navbar-nav.mr-auto
         li.nav-item.active
-          a.nav-link(href='../learnmore.html') Destinations
+          a.nav-link(href='learnmore.html') Destinations
         li.nav-item.active
           a.nav-link(href='/packages') Packages
         li.nav-item.active
@@ -44,15 +45,20 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
             span.sr-only (current)
         li.nav-item
           a.nav-link(href='/contacts') Contact Us
+    if currentUser   
+      .mt-1.mr-4.float-right
+        a.float-right(href="/log-out") Logout
+        p.float-right.mx-4.text-dark Welcome #{currentUser.userid}
           
 .jumbotron.jumbotron-fluid
       .container
         h1.display-4=`Thank you ${currentUser.CustFirstName} for your booking`
         h1.display-4=`on ${new Date(data).toDateString()}!`
         .text-center
-          a.button.btn.btn-danger.btn-lg(type='button' href='/log-out') Logout
+          a.button.btn.btn-light.btn-lg(type='button' href='/packages') Book Again
         .text-center
-          a.button.btn.btn-primary.btn-lg(type='button' href='/packages') Book Again
+          a.button.btn.btn-light.btn-lg(type='button' href='/packages') View Bookings
+        
         
 .container
       if errors    

@@ -1,4 +1,4 @@
-// Authors: David McDonald, 
+// Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
 
 var createError = require('http-errors');
 var express = require('express');
@@ -46,11 +46,10 @@ app.use('/', indexRouter);
 app.use('/register', usersRouter);
 app.use('/blogs', blogRouter);
 app.use('/packages', packageRouter)
-app.use("/conapp.use('/ordersSum', orderSumRouter); //newtacts", contactRouter);
+//app.use("/conapp.use('/ordersSum', orderSumRouter); //newtacts", contactRouter);
 app.use('/book', orderRouter);
 app.use('/contacts', contactRouter);
 app.use('/viewbookings', orderSumRouter); //new
-app.post('/contact', require('./formregister').registerpost);
 
 
  

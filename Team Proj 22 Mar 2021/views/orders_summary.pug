@@ -1,4 +1,4 @@
-//- Authors: David McDonald
+//- Authors: David McDonald,  Farid Kassam, Shefqet Zyko
 
 
 doctype html
@@ -48,22 +48,27 @@ head
       span.navbar-toggler-icon
     #navbarsExampleDefault.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
-        li.nav-item.active
-          a.nav-link(href='learnmore.html') Destinations
-        li.nav-item.active
-          a.nav-link(href='/packages') Packages
-        li.nav-item.active
-          a.nav-link(href='/viewbookings') Bookings
-        li.nav-item.active
-          a.nav-link(href='/blogs/all') Blogs
-        li.nav-item.active
-          a.nav-link(href='/blogs') Create Blog
-        li.nav-item.active
-          a.nav-link(href='/register')
-            | Register 
-            span.sr-only (current)
-        li.nav-item
-          a.nav-link(href='/contacts') Contact Us
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='learnmore.html') Destinations
+          li.nav-item.active
+            a.nav-link(href='/packages') Packages
+          li.nav-item.active
+            a.nav-link(href='/viewbookings') Bookings
+          li.nav-item.active
+            a.nav-link(href='/blogs/all') Blogs
+          li.nav-item.active
+            a.nav-link(href='/blogs') Create Blog
+          li.nav-item.active
+            a.nav-link(href='/register')
+              | Register 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/contacts') Contact Us
+      if currentUser   
+        .mt-1.mr-4.float-right
+          a.float-right(href="/log-out") Logout
+          p.float-right.mx-4.text-dark Welcome #{currentUser.userid}
   
   .jumbotron.p-4.p-md-5.rounded
     .col-md-6.px-0

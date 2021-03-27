@@ -1,4 +1,5 @@
-// Authors:
+// Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
+//courtesy of Mostafa Mohamed
 
 var express = require("express");
 var router = express.Router();

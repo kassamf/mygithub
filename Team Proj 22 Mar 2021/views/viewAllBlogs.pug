@@ -1,4 +1,4 @@
-//- Authors:
+//- Authors: Farid Kassam, Irshaad Sardiwalla
 
 doctype html
 head
@@ -41,17 +41,18 @@ head
 .container
   header.blog-header.py-3
   nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f2fd;')
-      a.navbar-brand(href='/') Travel Experts
-      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarsExampleDefault.collapse.navbar-collapse
+    a.navbar-brand(href='/') Travel Experts
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarsExampleDefault.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
         ul.navbar-nav.mr-auto
           li.nav-item.active
-            a.nav-link(href='../learnmore.html') Destinations
+            a.nav-link(href='learnmore.html') Destinations
           li.nav-item.active
             a.nav-link(href='/packages') Packages
           li.nav-item.active
-          a.nav-link(href='/viewbookings') Bookings
+            a.nav-link(href='/viewbookings') Bookings
           li.nav-item.active
             a.nav-link(href='/blogs/all') Blogs
           li.nav-item.active
@@ -62,6 +63,10 @@ head
               span.sr-only (current)
           li.nav-item
             a.nav-link(href='/contacts') Contact Us
+      if currentUser   
+        .mt-1.mr-4.float-right
+          a.float-right(href="/log-out") Logout
+          p.float-right.mx-4.text-dark Welcome #{currentUser.userid}
   
   .jumbotron.p-4.p-md-5.text-white.rounded
     .col-md-6.px-0

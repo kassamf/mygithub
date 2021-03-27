@@ -1,4 +1,5 @@
-// Authors:
+/// Authors: Irshaad Sardiwalla, Srinivasan Sivalingam
+//courtesy of Mostafa Mohamed
 
 
 // getting-started.js

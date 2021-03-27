@@ -1,4 +1,4 @@
-// Authors:
+// Authors: Shefqet Zyko
 
 var express = require('express');
 var router = express.Router();
