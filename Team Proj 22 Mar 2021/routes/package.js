@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const Package = require("../models/packages_irshaad");
+const Package = require("../models/packages");
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://irshaad:%23myfirstDB@cluster0.dmjv8.mongodb.net/myclouddb', {useNewUrlParser: true, useUnifiedTopology: true});

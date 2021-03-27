@@ -4,7 +4,7 @@ const { Booking } = require('../models/booking');
 //const { getAgents } = require('../models/contactMongo');
 const Contact = require("../models/contactMongo");
 const query = ({});
-const Package = require("../models/packages_irshaad");//added by Irshaad 24 Mar 2021
+const Package = require("../models/packages");//added by Irshaad 24 Mar 2021
 const Agent = require("../models/agents")
 const mongoose = require('mongoose');
 
