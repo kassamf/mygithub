@@ -7,7 +7,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
   // Bootstrap CSS
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous')
-  title Register Pug
+  title Register
   style.
     body {
     background-image: url("images/pexels-photo-132037_sunset.jpeg");
@@ -22,7 +22,7 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
     #navbarsExampleDefault.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
         li.nav-item.active
-          a.nav-link(href='../learnmore.html') Destinations
+          a.nav-link(href='../destinations.html') Destinations
         li.nav-item.active
           a.nav-link(href='/packages') Packages
         li.nav-item.active
@@ -57,9 +57,9 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
               small#emailHelp.form-text(style='display:none') Please enter your e-mail.
             .form-group.col-md-6
               label(for='inputPassword4') Password
-              input#inputPassword4.form-control(type='password' name='passwd' placeholder='xxxxxxxx' aria-describedby='passwordHelp' required='')
+              input#inputPassword4.form-control(type='password' name='passwd' placeholder='xxxxxxxx' aria-describedby='passwordHelp' required='' pattern='(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}')
               small#passwordHelp.form-text(style='display:none')
-                | Your password should be 8 characters and must include at least one number, one uppercase letter and one special character.
+                | Your password should be 8 characters and must include at least one number, one uppercase letter and one lowercase character.
           .form-row
             .form-group.col-md-6
               label(for='firstName') First name
@@ -76,7 +76,7 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
           .form-group
             label(for='inputAddress2') Country
             input#inputAddress2.form-control(type='text' name='CustCountry' placeholder='Country' aria-describedby='inputAddressHelp2')
-            small#inputAddressHelp2.form-text(style='display:none') Please enter your apartment, studio, or floor.
+            small#inputAddressHelp2.form-text(style='display:none') Please enter your country.
           .form-row
             .form-group.col-md-6
               label(for='inputCity') City

@@ -9,12 +9,6 @@ mongoose.connect('mongodb+srv://irshaad:%23myfirstDB@cluster0.dmjv8.mongodb.net/
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
-const pageShowContacts = {
-  pagetitle: "Orders Summary",  //new
- // pageheading: "A collection of all blog posts.",
- // pagemessage: "Write your own inspiring tale to capture the memories of past travels.",
-};
-
 
 router.use((req, res, next) => {
   //console.log('Time: ', Date.now());
@@ -22,7 +16,7 @@ router.use((req, res, next) => {
   //res.status(403).send("Not allowed");
   else next();
 });
-// Get all contacts page for agencies part
+// Get all bookings for logged in customer
 
 router.get('/', function(req, res, next) {
       const query = { userid : req.user.userid };
@@ -31,11 +25,11 @@ router.get('/', function(req, res, next) {
           console.log(err);
           next(err);
         }
-  res.render("orders_summary", { allBookings:bookings });
+  res.render("bookingsview", { allBookings:bookings });
   console.log(bookings)
               })});
 
-
+//deletes individual booking
 router.get('/delete/:id',(req,res)=>{
   console.log('id',req.params.id)
   Booking.findByIdAndRemove(req.params.id,(err,result)=>{

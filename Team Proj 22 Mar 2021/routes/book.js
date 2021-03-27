@@ -29,7 +29,7 @@ router.use((req, res, next) => {
 });
 
 
-  //new booking page Irshaad
+  //looks up package and agent information from Mongo and displays it on pug view. Math fn() assigns random agent to booking
   router.get("/:pkgId", function (req, res, next) {
     //console.log("We are now in the packages end-point");
     const pkgId = req.params.pkgId;
@@ -45,12 +45,12 @@ router.use((req, res, next) => {
           console.log(err);
           next(err);
         }
-        res.render("order_new",{ package, agent });
+        res.render("newbooking",{ package, agent });
       })
     });
   });
 
-  //recieves data from the order_new pug page form and stores to Mongo Atlas booking collection
+  //recieves data from the newbooking pug page form and writes to Mongo Atlas booking collection
   router.post("/:pkgId", function (req, res, next) {
     //console.log("We are now in the packages end-point");
       //console.log(req.user.CustomerId)
