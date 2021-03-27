@@ -28,30 +28,16 @@ head
   link(href='../stylesheets/cover.css' rel='stylesheet')
 
 body
-  .dropdown.mr-4
-          button#dropdownMenuButton.btn.btn-link.btn-sm.dropdown-toggle.float-right(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-            | Login/Register
-          .dropdown-menu
-            form.px-4.py-3(role='form', action="/login",method="post")
-              .form-group
-                label(for='exampleDropdownFormEmail1') Username
-                input#exampleDropdownFormEmail1.form-control(type='text' name="username")
-              .form-group
-                label(for='exampleDropdownFormPassword1') Password
-                input#exampleDropdownFormPassword1.form-control(type='password' placeholder='Password' name='password')
-              .form-group
-                .form-check
-                  input#dropdownCheck.form-check-input(type='checkbox')
-                  label.form-check-label(for='dropdownCheck')
-                    | Remember me
-              button.btn.btn-primary(type='submit') Sign in
-            .dropdown-divider
-            a.bg-primary.dropdown-item(href='/register') Sign up
-
 .cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
   header.masthead.mb-auto
     .inner
       h3.masthead-brand Travel Experts
+      form.form-signin.form-inline.justify-content-center(method='POST' action='/login')
+        label.sr-only(for='inputUser') Email address
+        input#inputUser.form-control.form-control-sm.form-control-inline(style='margin:5px' type='email' name='username' placeholder='Email' required='' autofocus='')
+        label.sr-only(for='inputPassword') Password
+        input#inputPassword.form-control.form-control-sm.form-control-inline(style='margin:5px' type='password' name='password' placeholder='Password' required='')
+        button.btn.btn-sm.btn-light(type='submit' style='margin:5px') Sign in
       nav.nav.nav-masthead.justify-content-center
         a.nav-link.active(href='../learnmore.html') Destinations
         a.nav-link(href='/packages') Packages
@@ -60,9 +46,8 @@ body
         a.nav-link(href='/blogs') Create Blog
         a.nav-link(href='/register') Register
         a.nav-link(href='/contacts') Contact Us
-
-        
-    
+     
+     
     if errors    
         each error in errors
             p.alert.alert-danger= error
@@ -73,14 +58,7 @@ body
 
       
   main.inner.cover(role='main')
-    form.form-signin(method='POST' action='/login')
-        h1.h3.mb-3.font-weight-normal Please sign in
-        label.sr-only(for='inputUser') Email address
-        input#inputUser.form-control(type='email' name='username' placeholder='Email' required='' autofocus='')
-        label.sr-only(for='inputPassword') Password
-        input#inputPassword.form-control(type='password' name='password' placeholder='Password' required='')
-        button.btn.btn-sm.btn-light(type='submit') Sign in
-    h1.cover-heading Your destination awaits!
+      h1.cover-heading Your destination awaits!
       p.lead Allow us to plan you dream getaway.
       
   footer.mastfoot.mt-auto
