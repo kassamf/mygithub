@@ -1,15 +1,9 @@
 // getting-started.js
 const mongoose = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator");
-
-// db.once('open', function() {
-//   // we're connected!
   
 
-
-// // Create a model Posts using the userSchema
-
-// });
+// Create a model Posts using the userSchema
 
 const agentSchema = new mongoose.Schema(
    {
