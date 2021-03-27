@@ -1,23 +1,18 @@
 var express = require("express");
 var router = express.Router();
-const Contact = require("../models/contactMongo");
+const { Booking } = require('../models/booking');
 const mongoose = require('mongoose'); //new
-//console.log(Contact);
-// const pageCreatePost = {
-//   pagetitle: "Blog post",
-//   pageheading: "Create a new post",
-//   pagemessage: "This is where you can create a new post.",
-// };
+mongoose.connect('mongodb+srv://irshaad:%23myfirstDB@cluster0.dmjv8.mongodb.net/myclouddb', {useNewUrlParser: true, useUnifiedTopology: true});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+
 const pageShowContacts = {
   pagetitle: "Orders Summary",  //new
  // pageheading: "A collection of all blog posts.",
  // pagemessage: "Write your own inspiring tale to capture the memories of past travels.",
 };
 
-
-
-
-const { Booking } = require('../models/booking');
 
 router.use((req, res, next) => {
   //console.log('Time: ', Date.now());
@@ -43,5 +38,15 @@ router.get('/', function(req, res, next) {
   res.render("orders_summary", { allBookings:bookings });
   console.log(bookings)
               })});
+
+
+router.get('/delete/:id',(req,res)=>{
+  console.log('id',req.params.id)
+  Booking.findByIdAndRemove(req.params.id,(err,result)=>{
+    if (err){console.log(err)}
+    console.log(result);
+  })
+  res.render('orders_summary');
+});
     
 module.exports = router;

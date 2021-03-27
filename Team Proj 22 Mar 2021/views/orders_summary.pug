@@ -71,9 +71,9 @@ main.container.pt-3(style='padding:15px;')
   h1.text-center(style='color:#1ec9e4')=currentUser.CustFirstName + ' ' + currentUser.CustLastName
   .row
     each booking in allBookings 
-      .col-md-4 
+      .col-md-3 
         .bd-example(style='margin-top: 25px;')
-        .card.mx-auto(style='width: 20rem;background: rgb(255, 255, 255, 0.6); font-size: 18px;')
+        .card.mx-auto(style='width: 14rem;background: rgb(255, 255, 255, 0.6);')
           .card-body
             p.card-text
               address
@@ -87,6 +87,9 @@ main.container.pt-3(style='padding:15px;')
               br
               |           PackageId: #{booking.PackageId}
               br
+            a.button.btn.btn-danger.btn-sm(type='button' href=`viewbookings/delete/${booking._id}`) Delete
+      .col-md-7 
+        h1=''
 
 
 
