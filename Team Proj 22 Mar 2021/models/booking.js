@@ -30,6 +30,11 @@ const bookingSchema = new mongoose.Schema(
      type: String,
      trim: true
   },
+
+  BookingCost:{
+    type: Number,
+    trim:true
+  },
  
    TravelerCount: {
      type: Number,

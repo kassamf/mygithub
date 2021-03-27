@@ -19,7 +19,12 @@ const pageShowContacts = {
 
 const { Booking } = require('../models/booking');
 
-
+router.use((req, res, next) => {
+  //console.log('Time: ', Date.now());
+  if (!req.user) res.render('pug_index');
+  //res.status(403).send("Not allowed");
+  else next();
+});
 // Get all contacts page for agencies part
 
 router.get('/', function(req, res, next) {
@@ -39,43 +44,4 @@ router.get('/', function(req, res, next) {
   console.log(bookings)
               })});
     
-
-
-    
-   
-       
-
-
-
-// // From Book.js
-//Irshaad commented out router so book button is not function
-// router.get('/:pid/:cid/', function(req, res, next) {
-//   console.log('CID:',req.params.cid)
-//   const booking = new Booking({ CustomerId: parseInt(req.params.cid), BookingId:Math.floor(Math.random()*100)+1, BookingDate: new Date(), TravelerCount: 3, PackageId: parseInt(req.params.pid) }); 
-//   console.log(booking);
-//   booking.save((err, result)=> {
-//     if(err) // If there are errors from the Model schema
-//     {   const errorArray = [];
-//         const errorKeys = Object.keys(err.errors);
-//         errorKeys.forEach(key => errorArray.push(err.errors[key].message));
-//         return res.render("sign-up", 
-//         { ...pageRegister,
-//             errors: errorArray,
-//             ...req.body,
-//         });     
-//     }
-//       res.render('thankyou',{data:result.CustomerId})
-//     });
-//   });
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
