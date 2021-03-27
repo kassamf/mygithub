@@ -1,7 +1,4 @@
-//IRSHAAD SARDIWALLA
-//TRAVEL AGENCY ASSIGNMENT PART 1 WEBDEV CPRG-008-001
-//03 MAR 2021
-//TEAM 2
+// Authors:
 
 //uses array method forEach to create 3 additional rows in the learnmore.html page
 
