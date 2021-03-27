@@ -49,6 +49,8 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f
       .container
         h1.display-4=`Thank you ${currentUser.CustFirstName} for your booking`
         h1.display-4=`on ${new Date(data).toDateString()}!`
+        .text-center
+          a.button.btn.btn-danger.btn-lg(type='button' href='/log-out') Logout
         
 .container
       if errors    
