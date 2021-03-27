@@ -68,7 +68,7 @@ head
 
 
 main.container.pt-3(style='padding:15px;')
-  h1(style='color:#1ec9e4')=currentUser.CustFirstName + ' ' + currentUser.CustLastName
+  h1.text-center(style='color:#1ec9e4')=currentUser.CustFirstName + ' ' + currentUser.CustLastName
   .row
     each booking in allBookings 
       .col-md-4 
