@@ -12,9 +12,9 @@ caption=["The Algarve is the beautiful southern coastline of Portugal. It is a r
           +" picturesque fishing towns and a glorious climate, all of which combines to make the perfect holiday destination.",
         "Arches National Park is a national park in eastern Utah, United States. The park is adjacent to the Colorado River," 
         +"4 miles (6 km) north of Moab, Utah. More than 2,000 natural sandstone arches are located in the park,"+ 
-        " including the well-known Delicate Arch, as well as a variety of unique geological resources and formations.- Wikipedia"
+        " including the well-known Delicate Arch, as well as a variety of unique geological resources and formations."
         , "At this viewpoint, you can see the waters of the Colorado River in all their sparkling,"+
-        " blue-green glory as they drift along toward the Grand Canyon. - Papilion Tours"
+        " blue-green glory as they drift along toward the Grand Canyon."
     ];
 webpageLink=["https://www.tripadvisor.ca/Tourism-g189111-Algarve-Vacations.html",
 "https://www.nps.gov/arch/index.htm",
