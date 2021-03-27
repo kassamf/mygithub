@@ -56,7 +56,6 @@ const bookingSchema = new mongoose.Schema(
 userid: {
   type: String,
   trim: true,
-  unique: "The username must be unique.",
 }
  });
 
