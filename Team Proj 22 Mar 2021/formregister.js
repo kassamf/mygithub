@@ -1,3 +1,5 @@
+// Authors:
+
 module.exports.registerpost = (req, res)=>{
     // console.log('First name:', req.body.fname);
     // if(req.path === '/register'){
