@@ -40,7 +40,7 @@ router.get('/delete/:id',(req,res)=>{
     if (err){console.log(err)}
     console.log(result);
   })
-  res.render('orders_summary');
+  res.redirect('/viewbookings');
 });
     
 module.exports = router;

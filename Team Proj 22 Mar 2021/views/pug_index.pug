@@ -71,21 +71,18 @@ body
     .container 
       p#headermessage.alert.alert-success(style='margin-top:15px')= headermessage
 
+      
   main.inner.cover(role='main')
-    .col-md-4
-    .col-md-4
-      form.form-signin(method='POST' action='/login')
+    form.form-signin(method='POST' action='/login')
         h1.h3.mb-3.font-weight-normal Please sign in
         label.sr-only(for='inputUser') Email address
         input#inputUser.form-control(type='email' name='username' placeholder='Email' required='' autofocus='')
         label.sr-only(for='inputPassword') Password
         input#inputPassword.form-control(type='password' name='password' placeholder='Password' required='')
         button.btn.btn-sm.btn-light(type='submit') Sign in
-    .col-md-4
     h1.cover-heading Your destination awaits!
       p.lead Allow us to plan you dream getaway.
-      p.lead
-        a.btn.btn-lg.btn-secondary(href='learnmore.html') Learn more
+      
   footer.mastfoot.mt-auto
     .inner
       p
