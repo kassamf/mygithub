@@ -87,6 +87,8 @@ main.container.pt-3(style='padding:15px;')
               br
               |           PackageId: #{booking.PackageId}
               br
+              |           Total Cost: $#{booking.BookingCost}
+              br
             a.button.btn.btn-danger.btn-sm(type='button' href=`viewbookings/delete/${booking._id}`) Delete
       .col-md-7 
         h1=''
