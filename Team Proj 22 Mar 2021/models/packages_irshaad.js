@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 
 const packageSchema = new Schema({
+  _id: Number,
   PackageId: Number,
   PkgName: String,
   PkgStartDate: Date,

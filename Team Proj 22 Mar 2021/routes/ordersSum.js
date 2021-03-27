@@ -23,18 +23,12 @@ router.use((req, res, next) => {
 // Get all contacts page for agencies part
 
 router.get('/', function(req, res, next) {
-  
-      const query = { CustomerId : req.user.CustomerId };
-  
+      const query = { userid : req.user.userid };
       Booking.find(query, (err, bookings) => {
-  
         if (err) {
-  
           console.log(err);
-  
           next(err);
         }
-
   res.render("orders_summary", { allBookings:bookings });
   console.log(bookings)
               })});

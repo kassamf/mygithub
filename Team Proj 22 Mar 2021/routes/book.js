@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const packages = require('../models/packages');
 const { Booking } = require('../models/booking');
 //const { getAgents } = require('../models/contactMongo');
 const Contact = require("../models/contactMongo");
@@ -53,7 +52,7 @@ router.use((req, res, next) => {
   router.post("/:pkgId", function (req, res, next) {
     //console.log("We are now in the packages end-point");
       //console.log(req.user.CustomerId)
-      const booking = new Booking({ CustomerId: parseInt(req.user.CustomerId),
+      const booking = new Booking({ userid: req.user.userid,
                                     BookingId:Math.floor(Math.random()*100)+1,
                                     BookingCost: req.body.packageCost*parseInt(req.body.inlineRadioOptions),
                                     BookingDate: new Date(), 
