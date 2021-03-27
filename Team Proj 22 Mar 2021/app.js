@@ -47,8 +47,9 @@ app.use('/packages', packageRouter)
 app.use("/conapp.use('/ordersSum', orderSumRouter); //newtacts", contactRouter);
 app.use('/book', orderRouter);
 app.use('/contacts', contactRouter);
+app.use('/viewbookings', orderSumRouter); //new
 app.post('/contact', require('./formregister').registerpost);
-app.use('/ordersSum', orderSumRouter); //new
+
 
  
 // catch 404 and forward to error handler
