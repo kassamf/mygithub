@@ -62,4 +62,14 @@ router.get("/all", function (req, res, next) {
   });
 });
 
+//deletes individual booking
+router.get('/all/delete/:id',(req,res)=>{
+  console.log('id',req.params.id)
+  Post.findByIdAndRemove(req.params.id,(err,result)=>{
+    if (err){console.log(err)}
+    console.log(result);
+  })
+  res.redirect('/blogs/all');
+});
+
 module.exports = router;
