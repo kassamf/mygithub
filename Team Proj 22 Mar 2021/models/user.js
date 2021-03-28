@@ -4,8 +4,7 @@
 // getting-started.js
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
-mongoose.connect(
-  "mongodb+srv://irshaad:%23myfirstDB@cluster0.dmjv8.mongodb.net/myclouddb",
+mongoose.connect(process.env.DB_HOST,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 

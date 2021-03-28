@@ -50,15 +50,6 @@ router.post('/', function(req, res, next) {
 
 module.exports.passport = null;
 
-// Login
-// router.post('/login', 
-//     //console.log(req._passport);
-//     module.exports.passport.authenticate('local', { failureRedirect: '/' }),
-//         function(req, res) {
-//             const headermessage = `Welcome `;
-//             res.redirect('/?headermessage=' + headermessage);
-//         }
-// );
 
 module.exports = router;
 //srini

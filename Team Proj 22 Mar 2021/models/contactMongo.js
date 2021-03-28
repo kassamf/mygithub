@@ -6,7 +6,7 @@
 // getting-started.js
 const mongo = require('mongodb').MongoClient;
 
-module.exports.getContacts = (query,callback)=>{mongo.connect('mongodb+srv://irshaad:%23myfirstDB@cluster0.dmjv8.mongodb.net/myclouddb', 
+module.exports.getContacts = (query,callback)=>{mongo.connect(process.env.DB_HOST,
 {useNewUrlParser: true, useUnifiedTopology: true},
        (err, db) => {
        if (err) callback(err.errmsg); // send the error to the callback function
@@ -20,7 +20,7 @@ module.exports.getContacts = (query,callback)=>{mongo.connect('mongodb+srv://irs
 }
 
 //This is for the agents - get data from database getAgents part//
-module.exports.getAgents = (query,callback)=>{mongo.connect('mongodb+srv://irshaad:%23myfirstDB@cluster0.dmjv8.mongodb.net/myclouddb', 
+module.exports.getAgents = (query,callback)=>{mongo.connect('mongodb+srv://irshaad:CPRG2021@cluster0.dmjv8.mongodb.net/myclouddb', 
 {useNewUrlParser: true, useUnifiedTopology: true},
        (err, db) => {
        if (err) callback(err.errmsg); // send the error to the callback function

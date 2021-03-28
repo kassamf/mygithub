@@ -2,7 +2,7 @@
 //courtesy of Mostafa Mohamed
 
 
-// getting-started.js
+// Package Schema format used for database collection packages
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
@@ -20,16 +20,6 @@ const packageSchema = new Schema({
 });
 
 module.exports = mongoose.model("Package", packageSchema);
-
-
-
-// (err, client) => {
-//     const db = client.db("myclouddb");     
-//     const mypackages = db.collection("packages");
-//     mypackages.find().toArray((err, dbpackages) => {
-//        return dbpackages;
-//       });
-//   }
 
 
 
