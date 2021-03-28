@@ -30,9 +30,9 @@ router.post('/', function(req, res, next) {
         user.save((err, result)=> {
             if(err) // If there are errors from the Model schema
             {   const errorArray = [];
-                //const errorKeys = Object.keys(err.errors);
+                const errorKeys = Object.keys(err.errors);
                 console.log(err);
-                //errorKeys.forEach(key => errorArray.push(err.errors[key].message));
+                errorKeys.forEach(key => errorArray.push(err.errors[key].message));
                 return res.render("sign-up", 
                 { ...pageRegister,
                     errors: errorArray,
