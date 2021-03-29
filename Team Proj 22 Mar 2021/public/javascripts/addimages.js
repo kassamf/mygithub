@@ -1,4 +1,4 @@
-// Authors:
+// Authors: Irshaad Sardiwalla
 
 //uses array method forEach to create 3 additional rows in the learnmore.html page
 
@@ -32,5 +32,5 @@ function myFunction(value,index) {
 //opens window of clicked image then closes after 3.5 seconds
 function myTimedWindow(caller){
   let x=window.open(caller);
-  setTimeout( ()=> { x.close();}, 3500);
+  setTimeout( ()=> { x.close();}, 5000);
 }

@@ -10,10 +10,13 @@ html
 
   style.
     body {
-    background-image: url("/images/mount.jpg");
+    background-image: url("/images/norway.jfif");
     background-size: cover;
     background-color: #c2a8ea;
     padding: 3.5rem; }
+    h2 {
+      color:#eaaa4a;
+    }
 
   body
     // The user login/register
@@ -40,7 +43,7 @@ html
     else    
       .mt-1.mr-4.float-right
         a.float-right(href="/log-out") Logout
-        p.float-right.mx-4.text-white Welcome #{currentUser.username}
+        p.float-right.mx-4.text-white Welcome #{currentUser.CustFirstName}
 
     nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-4.pl-5.sticky-top
       a.navbar-brand(href='/') Travel Experts
@@ -74,8 +77,8 @@ html
     .jumbotron.jumbotron-fluid.text-dark.mb-0(style="background-color: transparent")
       .container.px-5    
         h2.display-6 Please confirm your booking
-        p.lead
-          | All contacts.
+        p.lead(style='color:#eaaa4a;')
+          | You're just a click away from your dream destination.
 
     .container(style='margin-bottom:150px;')
       block content

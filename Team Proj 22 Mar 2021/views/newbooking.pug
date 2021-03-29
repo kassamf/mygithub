@@ -38,16 +38,16 @@ block content
             p.card-text
               | #{package.PkgDesc}
             p.card-text
-              | #{package.PkgStartDate.toDateString()}
+              | Start: #{package.PkgStartDate.toDateString()}
             p.card-text
-              | #{package.PkgEndDate.toDateString()}
+              | End: #{package.PkgEndDate.toDateString()}
             p.card-text(id='cost') 
               | Cost $#{package.PkgBasePrice} 
             p.card-text
-              small.text-muted Agent Commision $#{package.PkgAgencyCommission} 
+              small.text-muted Agent Commission $#{package.PkgAgencyCommission} 
             form(action=`/book/${package.PackageId}` method='POST')
-              #travellers.form-check.form-check-inline Number of travellers 
-                input#inlineRadio1.form-check-input(type='radio' name='inlineRadioOptions' value='1' checked='checked' onclick=`totalCost(this,${package.PkgBasePrice})`)
+              #travellers.form-check.form-check-inline Number of travellers:
+                input#inlineRadio1.form-check-input(style='margin-left:5px' type='radio' name='inlineRadioOptions' value='1' checked='checked' onclick=`totalCost(this,${package.PkgBasePrice})`)
                 label.form-check-label(for='inlineRadio1') 1
                 .form-check.form-check-inline
                 input#inlineRadio2.form-check-input(type='radio' name='inlineRadioOptions' value='2' onclick=`totalCost(this,${package.PkgBasePrice})`)
