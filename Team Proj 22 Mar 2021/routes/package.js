@@ -21,11 +21,6 @@ router.get("/", function (req, res, next) {
     }
   });
 
-  //res.send(`<h2> ${JSON.stringify(resd)}</h2>`);
-
-  //
-  // });
-  //else res.render('mypackages',{data:myPkgs});
 });
 
 router.post("/request", function (req, res, next) {
@@ -33,6 +28,3 @@ router.post("/request", function (req, res, next) {
 });
 
 module.exports = router;
-
-/// Irshad
-/// david

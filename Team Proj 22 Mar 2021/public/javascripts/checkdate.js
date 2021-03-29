@@ -1,4 +1,4 @@
-// Authors:
+// Authors: Mostafa Mohamed/Irshaad Sardiwalla
 
 function checkDate(){
     // alert("This is from the linked JS file");

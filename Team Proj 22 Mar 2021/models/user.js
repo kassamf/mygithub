@@ -1,7 +1,6 @@
 // Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
 //courtesy of Mostafa Mohamed
 
-// getting-started.js
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 mongoose.connect(process.env.DB_HOST,
@@ -10,12 +9,8 @@ mongoose.connect(process.env.DB_HOST,
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-  // we're connected!
-  // Create a model Posts using the userSchema
-});
 
-//figure out how to generate a customer id sequentially and assign an agent id
+
 const userSchema = new mongoose.Schema({
   passwd: {
     type: String,
@@ -90,5 +85,3 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(uniqueValidator);
 // Create a model User using the userSchema
 module.exports.User = mongoose.model("User", userSchema);
-
-///Irshad, Farid, David, Ceti, Srini

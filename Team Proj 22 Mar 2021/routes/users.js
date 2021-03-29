@@ -26,7 +26,7 @@ router.post('/', function(req, res, next) {
         // Create a new user object from the User Model
         const user = new User(req.body);
         console.log(req.body);        
-        // Store the use object in the DB
+        // Store the user object in the DB
         user.save((err, result)=> {
             if(err) // If there are errors from the Model schema
             {   const errorArray = [];
@@ -39,9 +39,7 @@ router.post('/', function(req, res, next) {
                     ...req.body,
                 });     
             }
-            //console.log(result);
             const headermessage = `Account created ${result.CustFirstName}`;
-            //res.redirect('/register?headermessage=' + headermessage);
             res.redirect('/?headermessage=' + headermessage);
             
         }) 

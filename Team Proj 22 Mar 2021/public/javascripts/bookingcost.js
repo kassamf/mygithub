@@ -1,4 +1,4 @@
-// Authors:
+// Authors: Irshaad Sardiwalla
 
 function totalCost(caller,pkgcost){
     // alert("This is from the linked JS file");

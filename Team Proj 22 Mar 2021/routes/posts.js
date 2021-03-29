@@ -47,11 +47,8 @@ router.post("/", function (req, res, next) {
         post: req.body.post,
       });
     }
-    //console.log(result);
     console.log(`<h2>Data saved: ${result.title}</h2>`);
     res.redirect('blogs/all')
-    //create a render to thank user for blog and redirect to blog create page
-    //res.render('myNewBlog', {title: 'my travel blog'});
   });
 });
 

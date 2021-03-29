@@ -3,7 +3,6 @@
 
 //This is for the agencies - get data from database getContact part//
 
-// getting-started.js
 const mongo = require('mongodb').MongoClient;
 
 module.exports.getContacts = (query,callback)=>{mongo.connect(process.env.DB_HOST,

@@ -1,6 +1,5 @@
 // Authors: Farid Kassam, Srinivasan Sivalingam, Irshaad Sardiwalla
 
-// getting-started.js
 const mongoose = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator");
 mongoose.connect(process.env.DB_HOST, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -8,14 +7,6 @@ mongoose.connect(process.env.DB_HOST, {useNewUrlParser: true, useUnifiedTopology
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
-db.once('open', function() {
-  // we're connected!
-  
-
-
-// Create a model Posts using the userSchema
-
-});
 
 const bookingSchema = new mongoose.Schema(
    {
@@ -62,6 +53,6 @@ userid: {
  });
 
 bookingSchema.plugin(uniqueValidator);
-// Create a model User using the userSchema
+// Create a model Booking using the userSchema
 module.exports.Booking = mongoose.model('Booking', bookingSchema);     
  

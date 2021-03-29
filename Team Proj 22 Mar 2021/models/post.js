@@ -1,21 +1,12 @@
 // Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
 //courtesy of Mostafa Mohamed
 
-// getting-started.js
 const mongoose = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator");
 mongoose.connect(process.env.DB_HOST, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-  
-
-
-// // post Schema template used for database collection posts
-
-});
 
 const postSchema = new mongoose.Schema({
       post: {
@@ -50,12 +41,8 @@ const postSchema = new mongoose.Schema({
               message: props => `${props.value} is not a valid URL slug.`
             }      
      }
-      // more fields defined below
     });
-
 
 
 postSchema.plugin(uniqueValidator);
 module.exports.Post = mongoose.model('Posts', postSchema);
-
-///Irshad, Farid, David, Ceti, Srini

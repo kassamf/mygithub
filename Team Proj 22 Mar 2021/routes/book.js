@@ -1,9 +1,9 @@
-// Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
+// Authors: Irshaad Sardiwalla, Srinivasan Sivalingam
 
 var express = require('express');
 var router = express.Router();
 const { Booking } = require('../models/booking');
-//const { getAgents } = require('../models/contactMongo');
+
 const Contact = require("../models/contactMongo");
 const query = ({});
 const Package = require("../models/packages");//added by Irshaad 24 Mar 2021
@@ -22,16 +22,13 @@ const pageRegister = {
   pagemessage:'Please enter the required information to create a new account.'};
 
 router.use((req, res, next) => {
-  //console.log('Time: ', Date.now());
   if (!req.user) res.render('pug_index');
-  //res.status(403).send("Not allowed");
   else next();
 });
 
 
   //looks up package and agent information from Mongo and displays it on pug view. Math fn() assigns random agent to booking
   router.get("/:pkgId", function (req, res, next) {
-    //console.log("We are now in the packages end-point");
     const pkgId = req.params.pkgId;
     const query = { PackageId : pkgId };
     Package.findOne(query, (err, package) => {
@@ -52,15 +49,12 @@ router.use((req, res, next) => {
 
   //recieves data from the newbooking pug page form and writes to Mongo Atlas booking collection
   router.post("/:pkgId", function (req, res, next) {
-    //console.log("We are now in the packages end-point");
-      //console.log(req.user.CustomerId)
       const booking = new Booking({ userid: req.user.userid,
                                     BookingId:Math.floor(Math.random()*100)+1,
                                     BookingCost: req.body.packageCost*parseInt(req.body.inlineRadioOptions),
                                     BookingDate: new Date(), 
                                     TravelerCount: req.body.inlineRadioOptions, 
                                     PackageId: parseInt(req.body.PackageId) }); 
-      //console.log(booking);
       booking.save((err, result)=> {
         if(err) // If there are errors from the Model schema
         {   const errorArray = [];
