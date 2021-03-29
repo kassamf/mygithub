@@ -1,8 +1,10 @@
 /// Authors: Irshaad Sardiwalla, Srinivasan Sivalingam
 //courtesy of Mostafa Mohamed
+// Grp1 Team 2
+// Date: 19 Mar 2021
 
+//Description: Package Schema format used for database collection packages
 
-// Package Schema format used for database collection packages
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 

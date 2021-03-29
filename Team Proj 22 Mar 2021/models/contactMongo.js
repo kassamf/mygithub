@@ -1,7 +1,8 @@
 // Authors: Farid Kassam, Shefqet Zyko, Srinivasan Sivalingam
+// Grp1 Team 2
+// Date: 19 Mar 2021
 
-
-//This is for the agencies - get data from database getContact part//
+//Description: This is for the agencies - get data from database getContact part//
 
 const mongo = require('mongodb').MongoClient;
 

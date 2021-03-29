@@ -1,4 +1,8 @@
 // Authors: Mostafa Mohamed/Irshaad Sardiwalla
+// Grp1 Team 2
+// Date: 28 Mar 2021
+
+//Description: changes expired dates to red
 
 function checkDate(){
     // alert("This is from the linked JS file");

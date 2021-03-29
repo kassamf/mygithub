@@ -1,5 +1,9 @@
 // Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
 //Courtesy of Mostafa Mohamed
+//- Grp1 Team 2
+//- Date: 20 Mar 2021
+
+//- Description: authentication of user
 
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
@@ -60,18 +64,6 @@ module.exports.init = function (app) {
       res.render("welcome",{userwelcome:req.user.CustFirstName});
     }
   );
-//remove if not required
-  // app.post(
-  //   "/login/booking",
-  //   passport.authenticate("local", { failureRedirect: "/" }),
-  //   function (req, res) {
-     
-  //           res.render("order_page",{data:user});
-  //           console.log(user)
-           
-            
-  //         }
-  // );
 
   app.use((req, res, next) => {
     res.locals.currentUser = req.user;

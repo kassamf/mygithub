@@ -1,6 +1,11 @@
 // Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
 //courtesy of Mostafa Mohamed
 
+// Grp1 Team 2
+// Date: 22 Mar 2021
+
+//Description: see description for individual routes below
+
 var express = require('express');
 var router = express.Router();
 const {User} = require('../models/user');
@@ -47,7 +52,4 @@ router.post('/', function(req, res, next) {
 });
 
 module.exports.passport = null;
-
-
 module.exports = router;
-//srini

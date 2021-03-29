@@ -1,5 +1,8 @@
 // Authors: Farid Kassam, Srinivasan Sivalingam, Irshaad Sardiwalla
+// Grp1 Team 2
+// Date: 19 Mar 2021
 
+//Description: Create a model Booking using the bookingSchema
 const mongoose = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator");
 mongoose.connect(process.env.DB_HOST, {useNewUrlParser: true, useUnifiedTopology: true});

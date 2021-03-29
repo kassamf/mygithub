@@ -1,4 +1,6 @@
-// Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
+//Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
+// Grp1 Team 2
+// Date: 19 Mar 2021
 
 var createError = require('http-errors');
 var express = require('express');

@@ -1,6 +1,8 @@
 // Authors: Irshaad Sardiwalla
+// Grp1 Team 2
+// Date: 19 Mar 2021
 
-//uses array method forEach to create 3 additional rows in the learnmore.html page
+//Description: uses array method forEach to create 3 additional rows in the learnmore.html page
 
 var picArr, imgHeader, text, caption, webpageLink;
 picArr = ["images/algarve_portugal.jpg", "images/stone-arch.jpg", "images/grand_canyon.jpg"];

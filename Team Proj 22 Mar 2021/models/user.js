@@ -1,6 +1,11 @@
 // Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
 //courtesy of Mostafa Mohamed
 
+// Grp1 Team 2
+// Date: 19 Mar 2021
+
+//Description: User Schema format used for database collection users
+
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 mongoose.connect(process.env.DB_HOST,

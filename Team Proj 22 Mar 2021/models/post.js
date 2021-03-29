@@ -1,5 +1,9 @@
 // Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
 //courtesy of Mostafa Mohamed
+// Grp1 Team 2
+// Date: 19 Mar 2021
+
+//Description: Post Schema format used for database collection posts
 
 const mongoose = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator");

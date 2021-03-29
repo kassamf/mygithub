@@ -1,4 +1,8 @@
 // Authors: David McDonald, Farid Kassam, Shefqet Zyko, Irshaad Sardiwalla, Srinivasan Sivalingam
+// Grp1 Team 2
+// Date: 22 Mar 2021
+
+//Description: see description for individual routes below
 
 var express = require("express");
 var router = express.Router();
@@ -11,11 +15,10 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 
 router.use((req, res, next) => {
-  //console.log('Time: ', Date.now());
   if (!req.user) res.render('pug_index');
-  //res.status(403).send("Not allowed");
   else next();
 });
+
 // Get all bookings for logged in customer
 
 router.get('/', function(req, res, next) {

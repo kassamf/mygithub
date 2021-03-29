@@ -1,4 +1,8 @@
 // Authors: Mostafa Mohamed
+// Grp1 Team 2
+// Date: 19 Mar 2021
+
+//Description: uses onfocus/onblur events to add descriptions below input boxes
 
 function confirmation(){
     return window.confirm("Are you sure you would like to proceed ?");     

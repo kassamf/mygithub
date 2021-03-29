@@ -1,10 +1,11 @@
 // Authors: Farid Kassam, Srinivasan Sivalingam
+// Grp1 Team 2
+// Date: 19 Mar 2021
+
+//Description: Create a model Agents using the agentSchema
 
 const mongoose = require('mongoose');
 const uniqueValidator = require("mongoose-unique-validator");
-  
-
-// Create a model Posts using the userSchema
 
 const agentSchema = new mongoose.Schema(
    {
@@ -20,10 +21,7 @@ const agentSchema = new mongoose.Schema(
      type: String,
      trim: true
   },
-//   AgtMiddleInitial: {
-//     type: String,
-//     trim: true
-//  },
+
   AgtLastName: {
      type: String,
      trim: true
@@ -36,10 +34,7 @@ const agentSchema = new mongoose.Schema(
      type: String,
      trim: true
   },
-//   AgtPosition:{
-//    type: String,
-//    trim: true
-//   },
+
  });
 
 agentSchema.plugin(uniqueValidator);
